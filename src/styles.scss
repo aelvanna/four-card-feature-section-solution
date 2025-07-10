@@ -15,8 +15,9 @@ $Grey-400: hsl(212, 6%, 44%);
 $White: hsl(0, 0%, 100%);
 
 /* Breakpoint Variables */
-$breakpoint-laptop: 1440px;
 $breakpoint-tablet: 768px;
+$breakpoint-laptop: 1440px;
+$breakpoint-4k: 2560px;
 
 @mixin cardBorder($border-color) {
   border-top: 5px solid $border-color;
@@ -46,7 +47,7 @@ h2 {
 
 h3 {
   font-weight: 600;
-  font-weight: 1.25rem;
+  font-size: 1.25rem;
   padding-bottom: 0.25rem;
 }
 
@@ -159,5 +160,13 @@ p {
         grid-row-end: 3;
       }
     }
+  }
+}
+
+@media only screen and (min-width: $breakpoint-4k) {
+  .card-grid {
+    column-gap: 5rem;
+    max-width: 75rem;
+    margin: 0 auto;
   }
 }
