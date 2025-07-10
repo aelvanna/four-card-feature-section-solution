@@ -26,9 +26,11 @@ Users should be able to:
 ### Screenshot
 
 **Desktop View**
+
 ![Desktop View Preview](./desktop-preview.jpg)
 
 **Mobile View**
+
 ![Mobile View Preview](./mobile-preview.jpg)
 
 ### Links
