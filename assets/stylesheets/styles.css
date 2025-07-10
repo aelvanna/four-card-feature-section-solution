@@ -114,20 +114,20 @@ p {
   .card-grid .card {
     width: 100%;
   }
-  .card-grid .card.supervisor {
+  .supervisor {
     grid-column-start: 1;
     grid-row-start: 1;
     grid-row-end: 3;
   }
-  .card-grid .card.team-builder {
+  .team-builder {
     grid-column-start: 2;
     grid-row-start: 1;
   }
-  .card-grid .card.karma {
+  .karma {
     grid-column-start: 2;
     grid-row-start: 2;
   }
-  .card-grid .card.calculator {
+  .calculator {
     grid-column-start: 3;
     grid-row-start: 1;
     grid-row-end: 3;
