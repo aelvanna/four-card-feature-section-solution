@@ -1,13 +1,163 @@
+/* Imported Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+/* Font Variables */
+$font-stack: "Poppins", sans-serif;
+
+/*Color Palette Variables*/
+$Red: hsl(0, 78%, 62%);
+$Cyan: hsl(180, 62%, 55%);
+$Orange: hsl(34, 97%, 64%);
+$Blue: hsl(212, 86%, 64%);
+
+$Grey-500: hsl(234, 12%, 34%);
+$Grey-400: hsl(212, 6%, 44%);
+$White: hsl(0, 0%, 100%);
+
+/* Breakpoint Variables */
+$breakpoint-laptop: 1440px;
+$breakpoint-tablet: 768px;
+
+@mixin cardBorder($border-color) {
+  border-top: 5px solid $border-color;
+  border-radius: 10px / 5px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-stack;
+}
+
+h1 {
+  font-weight: 200;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-weight: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+
+p {
+  font-weight: 400;
+  font-size: 0.938rem;
+}
+
+.introduction {
+  text-align: center;
+  margin: 3rem 2rem 4rem;
+}
+
+.card {
+  height: 17rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  box-shadow: 0rem 0.75rem 2rem -20px $Grey-400;
+  text-align: left;
+  border-radius: 0.35rem;
+  padding: 2rem;
+
+  &.supervisor {
+    @include cardBorder($border-color: $Cyan);
+  }
+
+  &.team-builder {
+    @include cardBorder($border-color: $Red);
+  }
+
+  &.calculator {
+    @include cardBorder($border-color: $Blue);
+  }
+
+  &.karma {
+    @include cardBorder($border-color: $Orange);
+  }
+
+  img {
+    display: block;
+    margin-left: auto;
+    margin-top: 2rem;
+  }
+
+  p {
+    color: $Grey-400;
+    font-size: 0.875rem;
+  }
+}
+
 .attribution {
-  font-size: 11px;
+  font-size: 0.688rem;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+@media only screen and (min-width: $breakpoint-tablet) {
+  .card {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: $breakpoint-laptop) {
+  .container {
+    margin-top: 5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+  .introduction {
+    margin: 0 auto 4rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 34rem;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 2rem;
+    place-items: center;
+
+    .card {
+      width: 100%;
+
+      &.supervisor {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+
+      &.team-builder {
+        grid-column-start: 2;
+        grid-row-start: 1;
+      }
+
+      &.karma {
+        grid-column-start: 2;
+        grid-row-start: 2;
+      }
+
+      &.calculator {
+        grid-column-start: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+      }
+    }
+  }
 }

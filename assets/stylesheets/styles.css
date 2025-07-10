@@ -1,5 +1,83 @@
+/* Imported Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+/* Font Variables */
+/*Color Palette Variables*/
+/* Breakpoint Variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-weight: 200;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+h1,
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-weight: 1.25rem;
+  padding-bottom: 0.25rem;
+}
+
+p {
+  font-weight: 400;
+  font-size: 0.938rem;
+}
+
+.introduction {
+  text-align: center;
+  margin: 3rem 2rem 4rem;
+}
+
+.card {
+  height: 17rem;
+  margin-bottom: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  box-shadow: 0rem 0.75rem 2rem -20px hsl(212, 6%, 44%);
+  text-align: left;
+  border-radius: 0.35rem;
+  padding: 2rem;
+}
+.card.supervisor {
+  border-top: 5px solid hsl(180, 62%, 55%);
+  border-radius: 10px/5px;
+}
+.card.team-builder {
+  border-top: 5px solid hsl(0, 78%, 62%);
+  border-radius: 10px/5px;
+}
+.card.calculator {
+  border-top: 5px solid hsl(212, 86%, 64%);
+  border-radius: 10px/5px;
+}
+.card.karma {
+  border-top: 5px solid hsl(34, 97%, 64%);
+  border-radius: 10px/5px;
+}
+.card img {
+  display: block;
+  margin-left: auto;
+  margin-top: 2rem;
+}
+.card p {
+  color: hsl(212, 6%, 44%);
+  font-size: 0.875rem;
+}
+
 .attribution {
-  font-size: 11px;
+  font-size: 0.688rem;
   text-align: center;
 }
 
@@ -7,10 +85,53 @@
   color: hsl(228, 45%, 44%);
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+@media only screen and (min-width: 768px) {
+  .card {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .container {
+    margin-top: 5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+  .introduction {
+    margin: 0 auto 4rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 34rem;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 2rem;
+    place-items: center;
+  }
+  .card-grid .card {
+    width: 100%;
+  }
+  .card-grid .card.supervisor {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .card-grid .card.team-builder {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  .card-grid .card.karma {
+    grid-column-start: 2;
+    grid-row-start: 2;
+  }
+  .card-grid .card.calculator {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
